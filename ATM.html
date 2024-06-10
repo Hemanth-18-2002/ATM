@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="atm-container">
+        <h1>ATM Machine</h1>
+        <div id="card-slot" class="fade-in">
+            <p>Please insert your CARD</p>
+        </div>
+        <div id="pin-section" class="fade-in" style="display:none;">
+            <input type="password" id="pin-input" placeholder="Enter your ATM pin">
+            <button onclick="enterPin()">Submit</button>
+        </div>
+        <div id="menu-section" class="fade-in" style="display:none;">
+            <button onclick="showBalance()">Balance Inquiry</button>
+            <button onclick="showWithdraw()">Withdraw</button>
+            <button onclick="showDeposit()">Deposit</button>
+            <button onclick="showTransfer()">Transfer</button>
+            <button onclick="showChangePin()">Change Pin</button>
+            <button onclick="showTransactionHistory()">Transaction History</button>
+            <button onclick="exitATM()">Exit</button>
+        </div>
+        <div id="operation-section" class="fade-in" style="display:none;">
+            <div id="balance-inquiry" style="display:none;">
+                <p id="balance-amount"></p>
+            </div>
+            <div id="withdraw-section" style="display:none;">
+                <input type="number" id="withdraw-amount" placeholder="Enter withdrawal amount">
+                <button onclick="withdraw()">Withdraw</button>
+            </div>
+            <div id="deposit-section" style="display:none;">
+                <input type="number" id="deposit-amount" placeholder="Enter deposit amount">
+                <button onclick="deposit()">Deposit</button>
+            </div>
+            <div id="transfer-section" style="display:none;">
+                <input type="number" id="transfer-amount" placeholder="Enter transfer amount">
+                <input type="text" id="transfer-account" placeholder="Enter account number to transfer">
+                <button onclick="transfer()">Transfer</button>
+            </div>
+            <div id="change-pin-section" style="display:none;">
+                <input type="password" id="old-pin" placeholder="Enter current pin">
+                <input type="password" id="new-pin" placeholder="Enter new pin">
+                <input type="password" id="confirm-new-pin" placeholder="Re-enter new pin">
+                <button onclick="changePin()">Change Pin</button>
+            </div>
+            <div id="transaction-history" style="display:none;">
+                <p>Transaction History:</p>
+                <ul id="history-list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
